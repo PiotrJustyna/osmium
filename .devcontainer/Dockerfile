@@ -18,7 +18,11 @@ RUN dnf -y update \
     ncurses \
     ncurses-compat-libs \
     xz \
-    perl
+    perl \
+    awscli
+
+ENV TZ=Europe/Dublin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN groupadd --gid $USER_GID $USERNAME
 RUN useradd -s /bin/bash --uid $USER_UID --gid $USERNAME -m $USERNAME

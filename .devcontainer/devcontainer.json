@@ -21,6 +21,6 @@
   },
   "remoteUser": "vscode",
   "mounts": [
-    "source=${env:HOME}${env:USERPROFILE}/.aws,target=/root/.aws,type=bind"
+    "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind"
   ]
 }
