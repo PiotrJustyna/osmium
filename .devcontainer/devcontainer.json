@@ -9,7 +9,13 @@
         "haskell.manageHLS": "GHCup"
       },
       "extensions": [
-        "haskell.haskell"
+        "haskell.haskell",
+        "yzhang.markdown-all-in-one",
+        "yzane.markdown-pdf",
+        "bierner.markdown-mermaid",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        "jebbs.plantuml",
+        "bierner.markdown-emoji"
       ]
     }
   },
