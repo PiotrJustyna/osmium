@@ -6,8 +6,7 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-RUN dnf -y update \
-    && dnf -y install \
+RUN dnf -y install \
     git \
     numactl-libs \
     gcc \
@@ -29,7 +28,7 @@ RUN useradd -s /bin/bash --uid $USER_UID --gid $USERNAME -m $USERNAME
 
 USER $USERNAME
 
-ENV GHC_VERSION="9.2.4"
+ENV GHC_VERSION="recommended"
 ENV GHCUP_CURL_OPTS="-k"
 ENV BOOTSTRAP_HASKELL_NONINTERACTIVE="1"
 ENV BOOTSTRAP_HASKELL_GHC_VERSION="$GHC_VERSION"
@@ -37,4 +36,4 @@ ENV BOOTSTRAP_HASKELL_CABAL_VERSION="recommended"
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
-ENV PATH="/home/$USERNAME/.cabal/bin:/home/$USERNAME/.ghcup/bin:$PATH"
+ENV PATH="/workspaces/osmium:/home/$USERNAME/.cabal/bin:/home/$USERNAME/.ghcup/bin:$PATH"
