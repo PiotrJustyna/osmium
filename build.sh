@@ -1,1 +1,2 @@
-docker run -it --rm -v ./:/tmp/haskell osmium /bin/bash -c "rm -rf ~/haskell && cp -r /tmp/haskell ~/ && cd ~/haskell && stack build && stack exec osmium"
+docker run -it --rm -v ./:/tmp/haskell/ osmium
+#/bin/bash -c "cp -r /tmp/haskell/ ~/haskell/ && cd ~/haskell/ && stack build"

@@ -1,2 +1,1 @@
-docker start osmium-development-environment
-# docker run -it --name osmium-development-environment -v ./:/tmp/haskell osmium /bin/bash -c "cd ~/haskell && stack exec osmium"
+docker run -it --rm -v ./:/tmp/haskell/ osmium /bin/bash -c "cp -r /tmp/haskell/ ~/haskell/ && cd ~/haskell/ && stack build && stack exec osmium-exe"
