@@ -1,4 +1,4 @@
-FROM fedora:39
+FROM debian:12.0-slim
 
 # --- input ---------------------------- #
 
@@ -20,12 +20,15 @@ ENV BOOTSTRAP_HASKELL_CABAL_VERSION="recommended"
 
 # --- ghcup installation preparation --- #
 
-RUN dnf -y install \
+RUN apt update
+
+RUN apt-get -y install \
     gcc \
-    gmp \
-    gmp-devel \
-    numactl-libs \
-    ncurses
+    libgmp-dev \
+    libnuma-dev \
+    threadscope \
+    curl \
+    make
 
 # --- non-root user creation ----------- #
 

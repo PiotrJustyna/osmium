@@ -1,7 +1,5 @@
 # osmium
 
-wip
-
 portable haskell development environment
 
 * write code locally
